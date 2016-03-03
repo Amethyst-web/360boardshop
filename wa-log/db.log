@@ -1,0 +1,126 @@
+
+2016-03-03 15:53:25:
+Query Error
+Query: INSERT  INTO shop_feature_values_varchar
+                   (`value`, `sort`, `feature_id`) VALUES ('мужской', 1, 4)
+Error: 1062
+Message: Duplicate entry '4-мужской' for key 'values'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+waModel->insert()
+3. n/a:n/a
+shopSortableModel->insert()
+4. n/a:n/a
+shopFeatureValuesModel->addValue()
+5. n/a:n/a
+shopFeatureModel->setValues()
+6. n/a:n/a
+shopTypeModel->insertTemplate()
+7. n/a:n/a
+shopBackendWelcomeAction->setup()
+8. n/a:n/a
+shopBackendWelcomeAction->execute()
+9. n/a:n/a
+waViewAction->display()
+10. n/a:n/a
+waViewController->executeAction()
+11. n/a:n/a
+waDefaultViewController->execute()
+12. n/a:n/a
+waController->run()
+13. n/a:n/a
+waViewController->run()
+14. n/a:n/a
+waFrontController->execute()
+15. n/a:n/a
+waFrontController->dispatch()
+16. n/a:n/a
+waSystem->dispatch()
+
+2016-03-03 15:53:25:
+Query Error
+Query: INSERT  INTO shop_feature_values_varchar
+                   (`value`, `sort`, `feature_id`) VALUES ('женский', 2, 4)
+Error: 1062
+Message: Duplicate entry '4-женский' for key 'values'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+waModel->insert()
+3. n/a:n/a
+shopSortableModel->insert()
+4. n/a:n/a
+shopFeatureValuesModel->addValue()
+5. n/a:n/a
+shopFeatureModel->setValues()
+6. n/a:n/a
+shopTypeModel->insertTemplate()
+7. n/a:n/a
+shopBackendWelcomeAction->setup()
+8. n/a:n/a
+shopBackendWelcomeAction->execute()
+9. n/a:n/a
+waViewAction->display()
+10. n/a:n/a
+waViewController->executeAction()
+11. n/a:n/a
+waDefaultViewController->execute()
+12. n/a:n/a
+waController->run()
+13. n/a:n/a
+waViewController->run()
+14. n/a:n/a
+waFrontController->execute()
+15. n/a:n/a
+waFrontController->dispatch()
+16. n/a:n/a
+waSystem->dispatch()
+
+2016-03-03 15:53:25:
+Query Error
+Query: INSERT  INTO shop_feature_values_varchar
+                   (`value`, `sort`, `feature_id`) VALUES ('унисекс', 3, 4)
+Error: 1062
+Message: Duplicate entry '4-унисекс' for key 'values'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+waModel->insert()
+3. n/a:n/a
+shopSortableModel->insert()
+4. n/a:n/a
+shopFeatureValuesModel->addValue()
+5. n/a:n/a
+shopFeatureModel->setValues()
+6. n/a:n/a
+shopTypeModel->insertTemplate()
+7. n/a:n/a
+shopBackendWelcomeAction->setup()
+8. n/a:n/a
+shopBackendWelcomeAction->execute()
+9. n/a:n/a
+waViewAction->display()
+10. n/a:n/a
+waViewController->executeAction()
+11. n/a:n/a
+waDefaultViewController->execute()
+12. n/a:n/a
+waController->run()
+13. n/a:n/a
+waViewController->run()
+14. n/a:n/a
+waFrontController->execute()
+15. n/a:n/a
+waFrontController->dispatch()
+16. n/a:n/a
+waSystem->dispatch()

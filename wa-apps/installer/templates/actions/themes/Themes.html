@@ -1,0 +1,104 @@
+
+<!-- theme filters -->
+<div class="i-filters js-filters">
+
+    <div class="float-right">
+        <ul class="menu-h i-sort js-filter" data-filter="commercial|sort">
+            <li class="selected"><a href="#/themes/" data-href="#/themes%filter%%query%/" class="inline-link"><b><i>[`Most popular`]</i></b></a></li>
+            <li><a href="#/themes&commercial=true/" data-href="#/themes&commercial=true%filter%%query%/" class="inline-link"><b><i>[`Paid`]</i></b></a></li>
+            <li><a href="#/themes&commercial=false/" data-href="#/themes&commercial=false%filter%%query%/" class="inline-link"><b><i>[`Free`]</i></b></a></li>
+            <li><a href="#/themes&sort=new/" data-href="#/themes&sort=new%filter%%query%/" class="inline-link"><b><i>[`Newest`]</i></b></a></li>
+        </ul>
+    </div>
+
+
+    {if !empty($vendor_name)}
+    <div class="float-right">
+        <ul class="menu-h i-filter-price js-filter" data-filter="vendor">
+            <li><a href="#/themes/" data-href="#/themes%query%%filter%/"><i class="icon16 close"></i>{$vendor_name|string_format:'[`by %s`]'|escape}</a></li>
+        </ul>
+    </div>
+    {/if}
+    <!-- app filter -->
+
+    <div class="float-left">
+        <ul class="menu-h with-icons dropdown js-query">
+            <li>
+                <a href="#/themes/" data-href="#/themes%query%%filter%/" class="inline-link">
+                    <i class="icon16 link"></i>
+                    <b><i><strong>[`Universal themes`]</strong></i></b><span class="hint"></span>
+                    <i class="icon10 darr"></i>
+                </a>
+
+                <ul class="menu-v with-icons">
+
+                    <li class="selected"><a href="#/themes/" data-href="#/themes%filter%/" class="bold"><i class="icon16 link"></i>[`Universal themes`]{if !empty($vendor_name)} <span class="hint">{$vendor_name|string_format:'[`by %s`]'|escape}</span>{/if}</a>
+                    </li>
+
+                    <!-- list all installed apps -->
+                    {if !empty($apps)}
+                    {foreach $apps as $app_id => $app}
+                        {if !empty($app.installed) && $app.enabled} {assign var=app_id value=$app.slug}
+                            <li {if isset($slug)&&$slug==$app.slug && (!isset($vendor) || $vendor==$app.vendor)}class="selected"{/if}>
+                                <a href="#/themes&slug={$app.slug}/" data-href="#/themes%filter%&slug={$app.slug}/">
+                                    {if strpos($app.icons.16, '.')}<img src="{$app.icons.16|regex_replace:'@^/@':$wa_url}" alt="{$app.name|escape}" />{else}<i class="icon16 {$app.icons.16}"></i>{/if}{$app.name|default:{$app.slug}|escape}
+                                     {if !empty($app.themes) && false}
+                                        <span class="count">{if is_array($app.themes)}{$app.themes|count}{else}{$app.themes}{/if}</span>
+                                     {/if}
+                                     {if !empty($vendor_name)}<span class="hint">{$vendor_name|string_format:'[`by %s`]'|escape}</span>{/if}
+                                </a>
+                            </li>
+                         {/if}
+                    {/foreach}
+                    {else}
+                        <li>
+                            <br /><br />
+                            <p class="align-center hint">[`No design theme enabled apps installed.`]</p>
+                        </li>
+                    {/if}
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- theme list -->
+<div class="block double-padded" id="themes-list">
+
+    {if !empty($extras)}
+        <ul class="thumbs js-list-items">
+        {*foreach $slug as $key*}
+        {foreach $extras as $key => $app}
+
+        {foreach $app['themes'] as $theme_id => $theme}
+            <li{if $theme.installed} class="i-installed"{/if}
+                    data-filter-commercial="{if empty($theme.commercial)}false{else}true{/if}"
+                    data-sort-new="{if !empty($theme.publish_datetime)}{strtotime($theme.publish_datetime)}{else}0{/if}"
+                    data-sort="-{$theme.sort|default:1000}"
+            >
+                {include file="./Themes.include.html" inline}
+            </li>
+         {/foreach}
+         {foreachelse}
+            <p class="align-center gray">[`No design themes were found.`]</p>
+        {/foreach}
+         </ul>
+    {else}
+        <p class="align-center gray">[`No design themes were found.`]</p>
+    {/if}
+
+
+
+
+<!--
+     [`Design themes are downloaded from webasyst.com website and installed in a single click.`]
+-->
+</div>
+
+<script type="text/javascript">
+    <!--
+    $.layout.window.setTitle('{"[`Themes`]"|cat:" — ":{$wa->accountName(false)}|escape:'javascript'}');
+    //-->
+</script>

@@ -1,0 +1,14 @@
+1b18876b8590f43950a0fcc8e2db346c *img/news.png
+a285da79a1cf95556e4eb1fd40059097 *lib/.htaccess
+e17c7bff29c4a2a101dec335fa05b209 *lib/config/build.php
+56443db40fae30bcba4893e821d12040 *lib/config/settings.php
+aca945ebf40fae878ce4c68c267f1f08 *lib/config/widget.php
+02e18f8ae81ad8009b879adf65da5f51 *lib/news.widget.php
+a1751e1f10a3b96b05d0401c97e72008 *locale/.htaccess
+4d87f74a80902559497007e832a93911 *locale/en_US/LC_MESSAGES/widget_news.mo
+2d626d1cc074f126a8b7e52b33b8dd03 *locale/en_US/LC_MESSAGES/widget_news.po
+f3a015b49d2b74a467c9b4a6f4e9cf1d *locale/ru_RU/LC_MESSAGES/widget_news.mo
+192117c2d844099e22f7d03b8365a9a9 *locale/ru_RU/LC_MESSAGES/widget_news.po
+a285da79a1cf95556e4eb1fd40059097 *templates/.htaccess
+84120edd872b0162a078d88ead2346b3 *templates/CustomRssControl.html
+c9f60f0d4c475c4bb29d2d4ddce05830 *templates/Default.html

@@ -1,0 +1,117 @@
+{include file="../../includes/message.html" inline}
+
+<!-- plugin filters -->
+<div class="i-filters js-filters">
+
+    <!-- price|updated -->
+    <div class="float-right">
+        <ul class="menu-h i-filter-price js-filter" data-filter="commercial|sort">
+            <li class="selected"><a href="#/plugins/" data-href="#/plugins%filter%/%query%/" class="inline-link"><b><i>[`Both`]</i></b></a></li>
+            <li><a href="#/plugins&commercial=true/" data-href="#/plugins&commercial=true%filter%/%query%/" class="inline-link"><b><i>[`Paid`]</i></b></a></li>
+            <li><a href="#/plugins&commercial=false/" data-href="#/plugins&commercial=false%filter%/%query%/" class="inline-link"><b><i>[`Free`]</i></b></a></li>
+            <li><a href="#/plugins&sort=new/" data-href="#/plugins&sort=new%filter%/%query%/" class="inline-link"><b><i>[`Newest`]</i></b></a></li>
+        </ul>
+    </div>
+
+    {if !empty($vendor_name)}
+        <div class="float-right">
+            <ul class="menu-h i-filter-price js-filter" data-filter="vendor">
+                <li><a href="#/plugins/" data-href="#/plugins%filter%/%query%/"><i class="icon16 no"></i>{$vendor_name|string_format:'[`by %s`]'|escape}</a></li>
+            </ul>
+        </div>
+    {/if}
+
+    <div class="float-right">
+        <input type="search" placeholder="Search" class="js-inline-search">
+    </div>
+
+
+    <!-- app -->
+    <div class="float-left">
+        <ul class="menu-h with-icons dropdown js-query">
+            <li>
+                <a href="#/plugins:top/" class="inline-link"><i class="icon16 star"></i><b><i><strong>[`Plugins`]</strong></i></b><span class="hint"></span> <i class="icon10 darr"></i></a>
+
+                <ul class="menu-v with-icons">
+                    {if !empty($apps)}
+                    {foreach $apps as $app_id => $app}
+                        {if !empty($app.installed)}
+                            {assign var=app_id value=$app.slug}
+                            <li {if !empty($slug)&&(in_array($app.slug,$slug)) && (!isset($vendor) || $vendor==$app.vendor)}class="selected"{/if}>
+                                <a href="#/plugins/{$app.slug}/" data-href="#/plugins%filter%/{$app.slug}/" data-filter="tag">
+                                    {if strpos($app.icons.16, '.')}<img src="{$app.icons.16|regex_replace:'@^/@':$wa_url}" alt="{$app.name|escape}"/>{else}<i class="icon16 {$app.icons.16}"></i>{/if}{$app.name|default:{$app.slug}|escape|truncate:27}
+                                    {if !empty($vendor_name)}<span class="hint"> {$vendor_name|string_format:'[`by %s`]'|escape}</span>{/if}
+                                </a>
+                            </li>
+                        {/if}
+                    {/foreach}
+
+                    {if !empty($tags)}
+                    <li style="padding-left: 5px;" class="top-padded"><br><h5 class="heading">[`Filter by category`]</h5></li>
+                    {foreach $tags as $tag => $tag_name}
+                        <li style="padding-left: 5px;">
+                            <a href="#/plugins&tag={$tag|escape}/all/" data-href="#/plugins&tag={$tag|escape}%filter%/all/" data-filter="tag">
+                                {$tag_name|escape}
+                                {if !empty($vendor_name)}<span class="hint"> {$vendor_name|string_format:'[`by %s`]'|escape}</span>{/if}
+                            </a>
+                        </li>
+                    {/foreach}
+                    {/if}
+                    {else}
+                        <li>
+                            <br /><br />
+                            <p class="hint align-center">[`No plugin enabled apps are installed.`]</p>
+                        </li>
+                    {/if}
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+
+    {if !empty($slug)}
+    {$sort = 1000}{$_plugins=[]}
+    {foreach $slug as $key}
+        {if !empty( $apps[$key]) && !empty($apps[$key]['plugins'])}
+        {foreach $apps[$key]['plugins'] as $plugin_id => $plugin}
+        {if !isset($plugin.sort)}{$sort = $sort+1}{$plugin.sort=$sort}{/if}
+        {$_sort=$plugin.sort}
+
+        {capture assign="_plugin"}
+        <li{if !empty($plugin.installed)} class="i-installed"{/if}
+                data-sort="-{$_sort}"
+                data-sort-new="{if !empty($plugin.publish_datetime)}{strtotime($plugin.publish_datetime)}{else}0{/if}"
+                data-filter-commercial="{if empty($plugin.commercial)}false{else}true{/if}"
+                data-hide="{if !empty($plugin.tags) && (in_array('dislike',$plugin.tags)||in_array('unlisted',$plugin.tags))}true{else}false{/if}"
+                data-search="{"`$plugin.name` `$plugin.vendor_name` `$plugin.vendor` `$plugin.description`"|escape}"
+        >
+            {include file="./Plugins.include.html" inline}
+        </li>
+            {/capture}
+            {$_plugins[-$_sort]=$_plugin}
+      {/foreach}
+        {/if}
+    {/foreach}
+     {/if}
+    {if !empty($_plugins)}
+        <ul class="thumbs js-list-items">
+
+            <!-- {ksort($_plugins)} -->
+
+            {implode("",$_plugins)}
+
+         </ul>
+    {else}
+        <p class="align-center gray"><br>[`No plugins were found.`]</p>
+    {/if}
+    <div class="clear"></div>
+
+<script type="text/javascript">
+<!--
+$.layout.window.setTitle('{"[`Plugins`]"|cat:" — ":{$wa->accountName(false)}|escape:'javascript'}');
+//-->
+</script>
