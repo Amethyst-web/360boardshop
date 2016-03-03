@@ -1,5 +1,4 @@
 <?php
-
 return array (
   '360boardshop.ru' => 
   array (
@@ -16,9 +15,8 @@ return array (
       'url' => '*',
       'app' => 'site',
       'locale' => 'ru_RU',
-      'theme' => 'vk',
-      'theme_mobile' => 'vk',
+      'theme' => 'default',
+      'theme_mobile' => 'default',
     ),
   ),
 );
-//EOF
