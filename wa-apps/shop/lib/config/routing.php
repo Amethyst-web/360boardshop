@@ -19,6 +19,7 @@ return array(
         'compare/' => 'frontend/compare',
         'compare/<id:[\d,]+>/' => 'frontend/compare',
         'tag/<tag>/' => 'frontend/tag',
+        'category/' => 'frontend/category',
         'category/<category_url>/' => 'frontend/category',
         'my/order/<id>/<code>/print/<form_type:(payment|shipping|form)>/<form_id>/' => 'frontend/myOrderPrintform',
         'my/order/<id>/print/<form_type:(payment|shipping|form)>/<form_id>/' => 'frontend/myOrderPrintform',

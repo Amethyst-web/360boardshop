@@ -1,0 +1,11 @@
+<section>
+    <div class="row">
+        {foreach from=$categories item=cat}
+            <div class="col-xs-3">
+                <a href="{$cat.full_url}" target="_blank">
+                    <img src={$cat.image} class="img-thumbnail img-responsive">
+                </a>
+            </div>
+        {/foreach}
+    </div>
+</section>

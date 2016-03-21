@@ -86,17 +86,17 @@ class shopFrontendProductAction extends shopFrontendAction
         if ($this->appSettings('limit_main_stock')) {
             $stock_id = waRequest::param('stock_id');
             if ($stock_id) {
-                $skus = $product->skus;
-                $_update_flag = false;
-                foreach ($skus as $sku_id => $sku) {
+//                $skus = $product->skus;
+//                $_update_flag = false;
+                foreach ($product['skus'] as $sku_id => $sku) {
                     if (isset($sku['stock'][$stock_id])) {
-                        $skus[$sku_id]['count'] = $sku['stock'][$stock_id];
-                        $_update_flag = true;
+                        $product['skus'][$sku_id]['count'] = $sku['stock'][$stock_id];
+//                        $_update_flag = true;
                     }
                 }
-                if ($_update_flag) {
-                    $product['skus'] = $skus;
-                }
+//                if ($_update_flag) {
+//                    $product['skus'] = $skus;
+//                }
             }
         }
 
@@ -232,9 +232,9 @@ class shopFrontendProductAction extends shopFrontendAction
         }
         $this->prepareProduct($product);
 
-        if (!$is_cart) {
-            $this->getBreadcrumbs($product);
-        }
+//        if (!$is_cart) {
+//            $this->getBreadcrumbs($product);
+//        }
 
         $this->addCanonical();
 

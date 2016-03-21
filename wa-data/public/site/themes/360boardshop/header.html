@@ -1,0 +1,24 @@
+<!-- navbar-->
+<header class="header">
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__content row">
+                <div class="col-sm-3 col-sm-offset-1 hidden-xs">
+                    <form class="topbar__search" action="{$wa->getUrl('shop/frontend/search')}">
+                        <div class="input-group"><span class="input-group-btn">
+                                <button type="button" class="btn"><i class="fa fa-search"></i></button>
+                            </span>
+                            <input type="text" placeholder="SEARCH" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-4 topbar__logo"><a href="index.html"><img src="{$wa_theme_url}img/logo.png" alt="" class="topbar__logo__normal"><img src="{$wa_theme_url}img/logo-small.png" alt="" class="topbar__logo__small"></a></div>
+                <div class="col-sm-3 hidden-xs">
+                    <div class="topbar__cart"><a href="{$wa->getUrl('shop/frontend/cart')}" class="btn btn-transparent"><i class="fa fa-shopping-cart"></i><span>{$wa->shop->cart->count()} Items in cart ({wa_currency_html($wa->shop->cart->total(), $wa->shop->currency())})</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file="`$wa_active_theme_path`/nav.html" inline}
+</header>
+<!-- /.navbar-->

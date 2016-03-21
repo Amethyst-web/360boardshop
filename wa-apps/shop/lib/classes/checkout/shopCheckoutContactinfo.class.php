@@ -15,6 +15,8 @@ class shopCheckoutContactinfo extends shopCheckout
         }
 
         $contact = $this->getContact();
+        $countriesModel = new waCountryModel();
+        $countries = $countriesModel->all(0,false,'ru_RU');
         if ($contact) {
             $this->form->setValue($contact);
 
@@ -26,19 +28,20 @@ class shopCheckoutContactinfo extends shopCheckout
             }
         }
 
-        $billing_matches_shipping = false;
-        if ($this->form->fields('address.shipping') && $this->form->fields('address.billing')) {
-            if (empty($this->form->values['address.shipping'])
-                || empty($this->form->values['address.billing'][0]['value'])
-                || $this->form->values['address.shipping'][0]['value'] == $this->form->values['address.billing'][0]['value'])
-            {
-                $billing_matches_shipping = true;
-            }
-        }
+//        $billing_matches_shipping = false;
+//        if ($this->form->fields('address.shipping') && $this->form->fields('address.billing')) {
+//            if (empty($this->form->values['address.shipping'])
+//                || empty($this->form->values['address.billing'][0]['value'])
+//                || $this->form->values['address.shipping'][0]['value'] == $this->form->values['address.billing'][0]['value'])
+//            {
+//                $billing_matches_shipping = true;
+//            }
+//        }
 
         $view = wa()->getView();
         $view->assign('checkout_contact_form', $this->form);
-        $view->assign('billing_matches_shipping', $billing_matches_shipping);
+        $view->assign('countries', $countries);
+//        $view->assign('billing_matches_shipping', $billing_matches_shipping);
         $view->assign('customer', $contact ? $contact : new waContact());
         if (!$view->getVars('error')) {
             $view->assign('error', array());

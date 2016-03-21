@@ -124,3 +124,201 @@ waFrontController->execute()
 waFrontController->dispatch()
 16. n/a:n/a
 waSystem->dispatch()
+
+2016-03-11 13:29:03:
+Query Error
+Query: SELECT fv.id FROM shop_feature f
+                INNER JOIN shop_feature_values_varchar fv ON f.id = fv.feature_id
+                WHERE f.code = 'brand' AND fv.value = Penny
+Error: 1054
+Message: Unknown column 'Penny' in 'where clause'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+shopFrontendCategoryAction->execute()
+3. n/a:n/a
+waViewAction->display()
+4. n/a:n/a
+shopFrontendAction->display()
+5. n/a:n/a
+waViewController->executeAction()
+6. n/a:n/a
+waDefaultViewController->execute()
+7. n/a:n/a
+waController->run()
+8. n/a:n/a
+waViewController->run()
+9. n/a:n/a
+waFrontController->execute()
+10. n/a:n/a
+waFrontController->dispatch()
+11. n/a:n/a
+waSystem->dispatch()
+
+2016-03-11 13:29:53:
+Query Error
+Query: SELECT fv.id FROM shop_feature f
+                INNER JOIN shop_feature_values_varchar fv ON f.id = fv.feature_id
+                WHERE f.code = 'brand' AND fv.value = 'Penny
+Error: 1064
+Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Penny' at line 3
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+shopFrontendCategoryAction->execute()
+3. n/a:n/a
+waViewAction->display()
+4. n/a:n/a
+shopFrontendAction->display()
+5. n/a:n/a
+waViewController->executeAction()
+6. n/a:n/a
+waDefaultViewController->execute()
+7. n/a:n/a
+waController->run()
+8. n/a:n/a
+waViewController->run()
+9. n/a:n/a
+waFrontController->execute()
+10. n/a:n/a
+waFrontController->dispatch()
+11. n/a:n/a
+waSystem->dispatch()
+
+2016-03-11 13:30:33:
+Query Error
+Query: SELECT fv.id FROM shop_feature f
+                INNER JOIN shop_feature_values_varchar fv ON f.id = fv.feature_id
+                WHERE f.code = 'brand' AND fv.value = Penny
+Error: 1054
+Message: Unknown column 'Penny' in 'where clause'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+shopFrontendCategoryAction->execute()
+3. n/a:n/a
+waViewAction->display()
+4. n/a:n/a
+shopFrontendAction->display()
+5. n/a:n/a
+waViewController->executeAction()
+6. n/a:n/a
+waDefaultViewController->execute()
+7. n/a:n/a
+waController->run()
+8. n/a:n/a
+waViewController->run()
+9. n/a:n/a
+waFrontController->execute()
+10. n/a:n/a
+waFrontController->dispatch()
+11. n/a:n/a
+waSystem->dispatch()
+
+2016-03-11 13:31:17:
+Query Error
+Query: SELECT fv.id FROM shop_feature f
+                INNER JOIN shop_feature_values_varchar fv ON f.id = fv.feature_id
+                WHERE f.code = 'brand' AND fv.value = Penny
+Error: 1054
+Message: Unknown column 'Penny' in 'where clause'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+shopFrontendCategoryAction->execute()
+3. n/a:n/a
+waViewAction->display()
+4. n/a:n/a
+shopFrontendAction->display()
+5. n/a:n/a
+waViewController->executeAction()
+6. n/a:n/a
+waDefaultViewController->execute()
+7. n/a:n/a
+waController->run()
+8. n/a:n/a
+waViewController->run()
+9. n/a:n/a
+waFrontController->execute()
+10. n/a:n/a
+waFrontController->dispatch()
+11. n/a:n/a
+waSystem->dispatch()
+
+2016-03-11 13:31:46:
+Query Error
+Query: SELECT fv.id FROM shop_feature f
+                INNER JOIN shop_feature_values_varchar fv ON f.id = fv.feature_id
+                WHERE f.code = 'brand' AND fv.value = 'Penny
+Error: 1064
+Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Penny' at line 3
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+shopFrontendCategoryAction->execute()
+3. n/a:n/a
+waViewAction->display()
+4. n/a:n/a
+shopFrontendAction->display()
+5. n/a:n/a
+waViewController->executeAction()
+6. n/a:n/a
+waDefaultViewController->execute()
+7. n/a:n/a
+waController->run()
+8. n/a:n/a
+waViewController->run()
+9. n/a:n/a
+waFrontController->execute()
+10. n/a:n/a
+waFrontController->dispatch()
+11. n/a:n/a
+waSystem->dispatch()
+
+2016-03-11 13:34:59:
+Query Error
+Query: SELECT fv.id FROM shop_feature f
+                INNER JOIN shop_feature_values_varchar fv ON f.id = fv.feature_id
+                WHERE f.code = 'brand' AND fv.value = Penny LIMIT 1
+Error: 1054
+Message: Unknown column 'Penny' in 'where clause'
+Stack:
+0. n/a:n/a
+waModel->run()
+1. n/a:n/a
+waModel->query()
+2. n/a:n/a
+shopFrontendCategoryAction->execute()
+3. n/a:n/a
+waViewAction->display()
+4. n/a:n/a
+shopFrontendAction->display()
+5. n/a:n/a
+waViewController->executeAction()
+6. n/a:n/a
+waDefaultViewController->execute()
+7. n/a:n/a
+waController->run()
+8. n/a:n/a
+waViewController->run()
+9. n/a:n/a
+waFrontController->execute()
+10. n/a:n/a
+waFrontController->dispatch()
+11. n/a:n/a
+waSystem->dispatch()

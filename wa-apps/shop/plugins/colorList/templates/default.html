@@ -1,0 +1,24 @@
+{if !empty($colors)}
+<div class="panel panel-default sidebar-menu" id="color-filter">
+    <div class="panel-heading">
+        <h3 class="panel-title">Цвета
+            {if !empty($selectedColors)}
+                <a class="btn btn-xs btn-danger pull-right clear-selection" href="#">
+                    <i class="fa fa-times-circle"></i> <span class="hidden-sm">Очистить</span>
+                </a>
+            {/if}
+        </h3>
+    </div>
+    <div class="panel-body">
+        {foreach $colors as $color}
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="color" value="{$color.name}" {if !empty($selectedColors) && in_array($color.id,$selectedColors)} checked="checked" {/if}>
+                    <span class="colour white" style="background-color: {$color.value}"></span>{$color.name}
+                </label>
+            </div>
+        {/foreach}
+    </div>
+</div>
+<script type="text/javascript" src="/wa-apps/{$selfInfo.app_id}/plugins/{$selfInfo.id}/js/main.js"></script>
+{/if}

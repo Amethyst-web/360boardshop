@@ -1,0 +1,73 @@
+<div class="content checkout-content" data-step-id="confirmation">
+    {if !empty($error)}
+    <div class="checkout-result error">
+        {$error}
+        <br><br>
+        <a href="{$wa->getUrl('/frontend/checkout')}">[`Restart checkout`]</a>
+    </div>
+    {else}
+        <dl class="dl-horizontal">
+            <dt>[`Ship to`]</dt>
+            <dd>{$contact.name|escape}</dd>
+            <dt>[`Shipping address`]</dt>
+            <dd>{$shipping_address.value}</dd>
+        </dl>
+
+        {if $billing_address}
+            <dl class="dl-horizontal">
+                <dt>[`Bill to`]</dt>
+                <dd>{$contact.name|escape}</dd>
+                <dt>[`Billing address`]</dt>
+                <dd>{$billing_address.value}</dd>
+            </dl>
+        {/if}
+        <hr>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th colspan="2">[`Product`]</th>
+                    <th>[`Quantity`]</th>
+                    <th>[`Unit price`]</th>
+                    <th>[`Total`]</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach $items as $item}
+                    <tr>
+                        <td><a href="{$wa->shop->productUrl($item.product)}"><img src="{$wa->shop->productImgUrl($item.product, '96x96')}" alt="{$item.name|escape}"></a></td>
+                        <td><a href="{$wa->shop->productUrl($item.product)}">{$item.name|escape}</a></td>
+                        <td>{$item.quantity}</td>
+                        <td>{shop_currency_html($item.price, $item.currency)}</td>
+                        <td>{shop_currency_html($item.price * $item.quantity, $item.currency)}</td>
+                    </tr>
+                {/foreach}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th colspan="4">[`Total`]</th>
+                    <th>{shop_currency_html($subtotal, true)}</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="form-group">
+            <label for="comment"><strong>[`Comment`]</strong></label><br>
+            <textarea class="comment form-control" rows="3" id="comment" name="comment">{waRequest::post('comment', '', 'string')|escape}</textarea>
+        </div>
+
+        {if !empty($terms)}
+        <div class="checkbox has-error">
+            <label><input type="checkbox" name="terms" value="1"> {sprintf('[`I have read and agree to the <a href="%s" target="_blank">Terms of service</a>`]', $wa->getUrl('/frontend/checkout', ['step' => 'confirmation'])|cat:'?terms=1')}</label>
+            {if waRequest::method() == 'post' && !$wa->post('terms')}
+            <p class="error help-block">[`You must read and agree to the Terms of service to place an order.`]</p>
+            {/if}
+        </div>
+        {/if}
+    {/if}
+
+    <!-- plugin hook: 'frontend_checkout' -->
+    {* @event frontend_checkout.%plugin_id% *}
+    {foreach $frontend_checkout as $_}{$_}{/foreach}
+
+</div>

@@ -1,2 +1,6 @@
 wa-cache/*
 # Created by .ignore support plugin (hsz.mobi)
+/hunter-hipster-ecommerce
+.idea
+Контент
+wa-config/db.php

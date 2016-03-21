@@ -1,0 +1,48 @@
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading">
+                <h4>Subscribe</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <form>
+                <div class="input-group">
+                    <input type="email" placeholder="Your email" name="email" class="form-control"><span class="input-group-btn">
+                    <button type="button" class="btn btn-default subscribe" data-gender="M">For men</button><button type="button" class="btn btn-default subscribe" data-gender="W">For ladies</button></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{literal}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.subscribe').click(function(e){
+            e.preventDefault();
+            $(this).parents('.input-group').removeClass('has-error');
+            var $email = $(this).parents('form').find('[name="email"]');
+            var email = $email.val();
+            if(!checkEmail(email)){
+                $(this).parents('.input-group').addClass('has-error');
+                errorNoty('Email должен быть вида email@example.com');
+                return;
+            }
+            $.post('subscribe/', {source: 'main', gender: $(this).data('gender'), email: email}, function(data){
+                if(!checkData(data)) return false;
+                data = data.data;
+                if(!data.result){
+                    errorNoty(data.message);
+                } else {
+                    successNoty(data.message);
+                    $email.val('');
+                }
+            }).fail(function(){
+                errorNoty('Error. Try again later');
+            });
+        });
+    });
+</script>
+{/literal}

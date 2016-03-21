@@ -1,0 +1,60 @@
+/* your styles go here */
+.form-group.color-selector{
+    text-align: center;
+}
+.form-group.color-selector .radio{
+    display: inline-block;
+}
+.color{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: solid 1px #555555;
+    vertical-align: top;
+    margin-top: 2px;
+    margin-left: -2px;
+    margin-right: 10px;
+}
+.product__details .feature [id]{
+    margin-left: 5px;
+}
+
+.topbar{
+    background-color: #FFF;
+}
+.topbar .topbar__search *{
+    background-color: #FFF;
+}
+
+.shipping-method .description{
+    height: 80px;
+    overflow: hidden;
+}
+.box-footer{
+    min-height: 81px;
+    position: relative;
+}
+.box-footer .hint{
+    display: inline-block;
+}
+
+.box-footer input[type=radio]{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.payment-method img{
+    margin-right: 10px;
+    float: left;
+}
+.payment-method h4{
+    display: inline-block;
+    height: 47px;
+    font-size: 15px;
+}
+.payment-method p{
+    height: 60px;
+    overflow: hidden;
+}

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd" >
+<theme id="360boardshop" system="1" vendor="webasyst" app="site" version="1.0.0">
+    <name locale="en_US">360 Boardshop Theme</name>
+    <name locale="ru_RU">Тема 360 Boardshop</name>
+    <files>
+        <file path="index.html">
+            <description locale="en_US">Common layout</description>
+            <description locale="ru_RU">Основной шаблон</description>
+        </file>
+        <file path="_item.html">
+            <description locale="en_US">Product preview template</description>
+            <description locale="ru_RU">Шаблон превью продукта</description>
+        </file>
+        <file path="_productModal.html">
+            <description locale="en_US">Product modal</description>
+            <description locale="ru_RU">Модальное окно продукта</description>
+        </file>
+        <file path="cart.html">
+            <description locale="en_US">Cart page</description>
+            <description locale="ru_RU">Страница корзины</description>
+        </file>
+        <file path="category.html">
+            <description locale="en_US">Category page</description>
+            <description locale="ru_RU">Страница каталога</description>
+        </file>
+        <file path="checkout.confirmation.html">
+            <description locale="en_US">Confirmation block</description>
+            <description locale="ru_RU">Блок подтверждения заказа</description>
+        </file>
+        <file path="checkout.contactinfo.html">
+            <description locale="en_US">Contact info block</description>
+            <description locale="ru_RU">Блок с контактными данными покупателя</description>
+        </file>
+        <file path="checkout.error.html">
+            <description locale="en_US">Order error page</description>
+            <description locale="ru_RU">Страница при ошибке в заказе</description>
+        </file>
+        <file path="checkout.html">
+            <description locale="en_US">Checkout page</description>
+            <description locale="ru_RU">Страница оформления заказа</description>
+        </file>
+        <file path="checkout.shipping.html">
+            <description locale="en_US">Shipping block</description>
+            <description locale="ru_RU">Блок доставки</description>
+        </file>
+        <file path="checkout.success.html">
+            <description locale="en_US">Order success page</description>
+            <description locale="ru_RU">Страница успешного оформления заказа</description>
+        </file>
+        <file path="error.html">
+            <description locale="en_US">Error page</description>
+            <description locale="ru_RU">Страница ошибки</description>
+        </file>
+        <file path="footer.html">
+            <description locale="en_US">Footer template</description>
+            <description locale="ru_RU">Шаблон подвала</description>
+        </file>
+        <file path="head.html">
+            <description locale="en_US">Head block</description>
+            <description locale="ru_RU">Блок head</description>
+        </file>
+        <file path="header.html">
+            <description locale="en_US">Header block</description>
+            <description locale="ru_RU">Шапка страницы</description>
+        </file>
+        <file path="home.html">
+            <description locale="en_US">Home page</description>
+            <description locale="ru_RU">Главная страница</description>
+        </file>
+        <file path="nav.html">
+            <description locale="en_US">Nav menu</description>
+            <description locale="ru_RU">Навигационная панель</description>
+        </file>
+        <file path="page.html">
+            <description locale="en_US">Page template</description>
+            <description locale="ru_RU">Шаблон информационной страницы</description>
+        </file>
+        <file path="product.html">
+            <description locale="en_US">Product page</description>
+            <description locale="ru_RU">Страница продукта</description>
+        </file>
+    </files>
+    <locales>
+        <locale>
+            <msgid>Unit price</msgid>
+            <msgstr locale="ru_RU">Цена за шт</msgstr>
+        </locale>
+        <locale>
+            <msgid>Continue shopping</msgid>
+            <msgstr locale="ru_RU">Продолжить покупки</msgstr>
+        </locale>
+        <locale>
+            <msgid>Showing %s of %s products</msgid>
+            <msgstr locale="ru_RU">Показано %s из %s товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>Shipping is calculated based on the values you have entered.</msgid>
+            <msgstr locale="ru_RU">Доставка расчитана исходя из значений, которые Вы ввели</msgstr>
+        </locale>
+        <locale>
+            <msgid>Next</msgid>
+            <msgstr locale="ru_RU">Далее</msgstr>
+        </locale>
+        <locale>
+            <msgid>Back to basket</msgid>
+            <msgstr locale="ru_RU">Назад в корзину</msgstr>
+        </locale>
+        <locale>
+            <msgid>Order summary</msgid>
+            <msgstr locale="ru_RU">Итог заказа</msgstr>
+        </locale>
+        <locale>
+            <msgid>Firstname</msgid>
+            <msgstr locale="ru_RU">Имя</msgstr>
+        </locale>
+        <locale>
+            <msgid>Order accepted</msgid>
+            <msgstr locale="ru_RU">Заказ принят</msgstr>
+        </locale>
+        <locale>
+            <msgid>Order error</msgid>
+            <msgstr locale="ru_RU">Ошибка при оформлении заказа</msgstr>
+        </locale>
+        <locale>
+            <msgid>Menu</msgid>
+            <msgstr locale="ru_RU">Меню</msgstr>
+        </locale>
+        <locale>
+            <msgid>Main</msgid>
+            <msgstr locale="ru_RU">Главная</msgstr>
+        </locale>
+        <locale>
+            <msgid>About</msgid>
+            <msgstr locale="ru_RU">О нас</msgstr>
+        </locale>
+        <locale>
+            <msgid>Delivery</msgid>
+            <msgstr locale="ru_RU">Доставка</msgstr>
+        </locale>
+        <locale>
+            <msgid>Items in cart (%s)</msgid>
+            <msgstr locale="ru_RU">Товаров в корзине (%s)</msgstr>
+        </locale>
+        <locale>
+            <msgid>Catalog</msgid>
+            <msgstr locale="ru_RU">Каталог</msgstr>
+        </locale>
+        <locale>
+            <msgid>Settings</msgid>
+            <msgstr locale="ru_RU">Характеристики</msgstr>
+            <msgstr locale="en_US">Options</msgstr>
+        </locale>
+        <locale>
+            <msgid>Product details</msgid>
+            <msgstr locale="ru_RU">О продукте</msgstr>
+        </locale>
+        <locale>
+            <msgid>Show it to your friends</msgid>
+            <msgstr locale="ru_RU">Поделитесь с друзьями</msgstr>
+        </locale>
+    </locales>
+</theme>

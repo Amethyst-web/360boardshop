@@ -1,0 +1,143 @@
+<div class="container" itemscope itemtype="http://schema.org/Product">
+    <link itemprop="availability" href="http://schema.org/InStock" />
+    {$_product = $wa->shop->product($product.id)}
+    <div class="row">
+        <div class="col-md-12">
+            {shop360breadcrumbsPlugin::getCrumbs($product.category_id, $product.id)}
+            <div class="row page-top">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h1 itemprop="name" class="product__heading">{$product.name|escape}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row product__main">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <div class="mainImage"><img src="{$wa->shop->productImgUrl($product, '458x0')}" alt="{$product.name|escape}" class="img-responsive"></div>
+                    <div class="row product__thumbs">
+                        {foreach $_product.images as $key => $image}
+                            {$product.image_id = $image.id}
+                            {$product.ext = $image.ext}
+                            <div class="col-xs-4">
+                                <a href="{$wa->shop->productImgUrl($product, '458x0')}" class="thumb" id="product-image-{$product.image_id}">{$wa->shop->productImgHtml($product, '132x0', [ 'itemprop' => 'image', 'class' => 'img-responsive', 'id' => 'product-image', 'alt' => $product.name|escape ])}</a>
+                            </div>
+                        {/foreach}
+                    </div>
+                </div>
+                <div class="col-sm-4 col-sm-offset-1">
+                    <form id="cart-form" action="{$wa->getUrl('/frontendCart/add')}">
+                        <p class="price" data-price="{$product.skus[$product.sku_id].price}">{$product.skus[$product.sku_id].price|wa_format_amount_currency:'RUB'}</p>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                {$default_sku_features = $product.sku_features}
+                                {foreach $features_selectable as $f}
+                                    <div class="form-group color-selector">
+                                        {if $f.type == 'color'}
+                                            {foreach $f.values as $v_id => $v}
+                                                {if !isset($default_sku_features[$f.id])}{$default_sku_features[$f.id]=$v_id}{/if}
+                                                <div class="radio">
+                                                    <label title="{$v->value}">
+                                                        <input type="radio" data-name="{$v->value}" data-feature-id="{$f.id}" data-style="{$v->style}" name="features[{$f.id}]" value="{$v_id}" {if $v_id == ifset($default_sku_features[$f.id])} checked="checked"{/if}>
+                                                        <span class="color" style="{$v->style}"></span>
+                                                    </label>
+                                                </div>
+                                            {/foreach}
+                                            <input type="hidden" data-feature-id="{$f.id}" class="sku-feature" name="features[{$f.id}]" value="{ifset($default_sku_features[$f.id])}">
+                                        {else}
+                                            <label for="{$f.code}">{$f.name}</label>
+                                            <select data-feature-id="{$f.id}" name="features[{$f.id}]" id="{$f.code}" class="form-control sku-feature">
+                                                {foreach $f.values as $v_id => $v}
+                                                    <option value="{$v_id}">{$v->value}</option>
+                                                {/foreach}
+                                            </select>
+                                        {/if}
+                                    </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                        <p class="text-center add2cart">
+                            <input type="hidden" name="product_id" value="{$product.id}">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>&nbsp;[`Add to cart`]</button>
+                        </p>
+                    </form>
+                    <div class="product__details">
+                        {if !empty($product.description)}
+                            <h4>[`Product details`]</h4>
+                            <p>{$product.description}</p>
+                        {/if}
+                        {if !empty($product.features)}
+                            <h4>[`Settings`]</h4>
+                            <ul>
+                                {foreach $product.features as $feat_key => $feat}
+                                    <li class="feature"><b>{$features[$feat_key].name}:</b><span id="feature_{$features[$feat_key].id}">{if $features[$feat_key].multiple == 1}{$feat[$product.sku_features[$features[$feat_key].id]]}{else}{$feat}{/if}</span></li>
+                                {/foreach}
+                            </ul>
+                        {/if}
+                    </div>
+                    <div class="product__social social">
+                        <h4>[`Show it to your friends`]</h4>
+                        <div class="share42init" data-title="{$wa->title()}" data-image="http://{$smarty.server.HTTP_HOST}{$wa->shop->productImgUrl($product, '458x0')}" {if !empty($product.description)}data-description="{$product.description}">{/if}</div>
+                    </div>
+                </div>
+            </div>
+            {$crossselling = $product->crossSelling(4)}
+            {$upselling = $product->upSelling(4)}
+            {if $crosselling}
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <!-- similar products-->
+                        <section class="products-similar">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6">
+                                    <h3>{sprintf('[`Customers who bought %s also bought`]', $product.name|escape)}</h3>
+                                </div>
+                                {foreach $crossselling as $item}
+                                    {include file="`$wa_active_theme_path`/_item.html" item=$item inline}
+                                {/foreach}
+                            </div>
+                        </section>
+                        <!-- /similar products-->
+                    </div>
+                </div>
+            {/if}
+            {if $upselling}
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <!-- similar products-->
+                        <section class="products-similar">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6">
+                                    <h3>[`See also`]</h3>
+                                </div>
+                                {foreach $upselling as $item}
+                                    {include file="`$wa_active_theme_path`/_item.html" item=$item inline}
+                                {/foreach}
+                            </div>
+                        </section>
+                        <!-- /similar products-->
+                    </div>
+                </div>
+            {/if}
+        </div>
+    </div>
+    {*{include file="`$wa_active_theme_path`/_productModal.html" inline}*}
+</div>
+<script>
+    ( function($) {
+        $.getScript("{$wa_theme_url}js/product.js", function() {
+            if (typeof Product === "function") {
+                new Product('#cart-form{if $wa->get('cart')}-dialog{/if}', {
+                    currency: {json_encode($currency_info)}
+                {if count($product.skus) > 1 or $product.sku_type}
+            ,services: {json_encode($sku_services)}
+                {/if}
+                {if $product.sku_type}
+            ,features: {json_encode($sku_features_selectable)}
+                {/if}
+            });
+            }
+        });
+    })(jQuery);
+</script>

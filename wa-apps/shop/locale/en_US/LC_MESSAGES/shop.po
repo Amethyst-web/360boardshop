@@ -10759,3 +10759,7 @@ msgstr ""
 #: /wa-apps/shop/lib/actions/csv/shopCsvProductupload.controller.php:168
 msgid "Custom skus' fields"
 msgstr ""
+
+#: /wa-apps/shop/lib/config/config.php:78
+msgid "Not round"
+msgstr ""

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="main-slider">
+                <div style="background-image: url('/wa-data/public/site/data/360boardshop.ru/slider/1.jpg');" class="item"></div>
+                <div style="background-image: url('/wa-data/public/site/data/360boardshop.ru/slider/2.jpg');" class="item"></div>
+                <div style="background-image: url('/wa-data/public/site/data/360boardshop.ru/slider/5.jpg');" class="item"></div>
+                <div style="background-image: url('/wa-data/public/site/data/360boardshop.ru/slider/6.jpg');" class="item"></div>
+                <div style="background-image: url('/wa-data/public/site/data/360boardshop.ru/slider/7.jpg');" class="item"></div>
+            </div>
+            <!-- /#main-slider-->
+        </div>
+    </div>
+</div>
+<div class="container">
+    {shopCategoriesPlugin::getCats()}
+    {* <section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h4>[`Last bought`]</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row products">
+            <div class="col-md-3 col-sm-6">
+                <div class="product">
+                    <div class="image"><a href="#"><img src="{$wa_theme_url}img/product2.jpg" alt="" class="img-responsive"></a>
+                        <div class="quick-view-button"><a href="#" data-toggle="modal" data-target="#product-quick-view-modal" class="btn btn-default btn-sm">[`Quick view`]</a></div>
+                    </div>
+                    <div class="text">
+                        <h3> <a href="detail.html">Fur coat</a></h3>
+                        <p class="price">$143             </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> *}
+    {shop360instagramPlugin::getLastPhotos()}
+    {shopSubscribePlugin::getMainForm()}
+    {include file="`$wa_active_theme_path`/_productModal.html" inline}
+</div>

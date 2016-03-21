@@ -1,0 +1,20 @@
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading">
+                <h4>We are in Instagram</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {for $i=5 to 0 step -1 nocache}
+            {if isset($recentPhotos.$i)}
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a href="{$recentPhotos.$i.link}" target="_blank">
+                        <img src="{$recentPhotos.$i.images.thumbnail.url}" class="img-thumbnail img-responsive">
+                    </a>
+                </div>
+            {/if}
+        {/for}
+    </div>
+</section>

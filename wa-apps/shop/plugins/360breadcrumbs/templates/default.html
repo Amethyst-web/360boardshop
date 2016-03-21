@@ -1,0 +1,14 @@
+<ul class="breadcrumb">
+    <li><a href="/">Главная</a></li>
+    {foreach $breadcrumbs as $crumb}
+        <li>
+            {if isset($crumb.url)}
+                <a href="{$crumb.url}">{$crumb.name}</a>
+            {else}
+                {$crumb.name}
+            {/if}
+        </li>
+    {foreachelse}
+        <li>Каталог</li>
+    {/foreach}
+</ul>

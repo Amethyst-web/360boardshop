@@ -1,0 +1,17 @@
+<!-- product-->
+<div class="col-md-4 col-sm-6" itemscope itemtype ="http://schema.org/Product">
+    <div class="product">
+        <div class="image">
+            <a href="{$item.frontend_url}">{$wa->shop->productImgHtml($item, '262x334', ['itemprop' => 'image', 'class'=>'img-responsive', 'alt' => $item.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}</a>
+            <!--<div class="quick-view-button">
+                <a href="#" data-toggle="modal" data-target="#product-quick-view-modal" class="btn btn-default btn-sm">Quick view</a>
+            </div>-->
+        </div>
+        <div class="text">
+            <p class="brand"><a href="#" itemprop="brand">{$item.brand}</a></p>
+            <h3> <a href="{$item.frontend_url}" itemprop="name">{$item.name}</a></h3>
+            <p class="price">{$item.price|wa_format_amount_currency:'RUB'}</p>
+        </div>
+    </div>
+</div>
+<!-- /product-->

@@ -1,0 +1,88 @@
+<script type="text/javascript" src="{$wa_theme_url}js/cart.js"></script>
+<div class="container cart">
+    {if !$cart.count}
+        <div class="col-md-12">
+            {shop360breadcrumbsPlugin::getStaticBreadcrumbs([0 => ['name' => _w('Shopping cart')]])}
+            <div class="row page-top">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h1>[`Shopping cart`]</h1>
+                    <p class="text-muted">[`Your shopping cart is empty.`]</p>
+                </div>
+            </div>
+        </div>
+    {else}
+        <div class="col-md-12">
+            {shop360breadcrumbsPlugin::getStaticBreadcrumbs([0 => ['name' => _w('Shopping cart')]])}
+            <div class="row page-top">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h1>[`Shopping cart`]</h1>
+                </div>
+            </div>
+        </div>
+        <div id="basket" class="col-md-12">
+            <div class="box">
+                <form method="post">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">[`Product`]</th>
+                                    <th>[`Quantity`]</th>
+                                    <th>[`Unit price`]</th>
+                                    <th colspan="2">[`Total`]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {foreach $cart.items as $item}
+                                    <tr class="basket-row" data-id="{$item.id}">
+                                        <td class="item-thumb"><a href="{$wa->shop->productUrl($item.product)}"><img src="{$wa->shop->productImgUrl($item.product, '96x96')}" alt="{if $item.sku_name && $item.sku_name != $item.product.name}{$item.sku_name|escape}{else}{$item.product.name|escape}{/if}"></a></td>
+                                        <td class="item-name"><a href="{$wa->shop->productUrl($item.product)}">{if $item.sku_name && $item.sku_name != $item.product.name}{$item.sku_name|escape}{else}{$item.product.name|escape}{/if}</a></td>
+                                        <td class="item-qty"><input type="number" name="quantity[{$item.id}]" value="{$item.quantity}" class="form-control qty{if !empty($item.error)} error{/if}"></td>
+                                        <td>{shop_currency_html($item.price, true)}</td>
+                                        <td class="item-total">{shop_currency_html($item.full_price, true)}</td>
+                                        <td class="item-remove"><a href="#" class="delete" title="[`Remove from cart`]"><i class="fa fa-trash-o"></i></a></td>
+                                    </tr>
+                                {/foreach}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2"><b>[`Total`]</b></td>
+                                    <td><b class="cart-count" style="margin-left: 25px;">{$cart.count}</b></td>
+                                    <td></td>
+                                    <td><b class="cart-total">{shop_currency_html($cart.total, true)}</b></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="box-footer">
+                        <div class="pull-left"><a href="/category/" class="btn btn-default"><i class="fa fa-chevron-left"></i> [`Continue shopping`]</a></div>
+                        <div class="pull-right cart-checkout">
+                            <input type="hidden" name="checkout" value="1">
+                            <button type="submit" class="btn btn-primary">[`Proceed to checkout`] <i class="fa fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {$_exclude_ids = []}
+            {foreach $cart.items as $item}{$_exclude_ids[] = $item.product.id}{/foreach}
+            {$related = $wa->shop->crossSelling($item.product.id, 3, true, $_exclude_ids)}
+            {if $related}
+                <!-- similar products-->
+                <section class="products-similar">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <h3><strong>[`Recommended!`]</strong> {sprintf('[`Customers who bought %s also bought`]', $item.product.name|escape)}</h3>
+                        </div>
+                        {foreach $related as $item}
+                            {include file="`$wa_active_theme_path`/_item.html" item=$item inline}
+                        {/foreach}
+                    </div>
+                </section>
+                <!-- /similar products-->
+            {/if}
+        </div>
+        {* @event frontend_cart.%plugin_id% *}
+        {foreach $frontend_cart as $_}{$_}{/foreach}
+    {/if}
+</div>

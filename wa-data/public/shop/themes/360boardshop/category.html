@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {shop360breadcrumbsPlugin::getCrumbs($category.id)}
+            <div class="row page-top">
+                <div class="col-sm-6 col-sm-offset-3">
+                    {if isset($category.id)}
+                        <h1>{$category.name|escape}</h1>
+                        <p class="text-muted">{$category.description|escape}</p>
+                    {else}
+                        <h1>[`Catalog`]</h1>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    {* @event frontend_category.%plugin_id% *}
+    {foreach $frontend_category as $_}{$_}{/foreach}
+    <div class="row">
+        <div class="col-md-3">
+            <!-- menus and filters-->
+            {shopCategoryListPlugin::getCategories()}
+            {shopBrandListPlugin::getBrands($category.id, $smarty.get.brand)}
+            {shopColorListPlugin::getColors($category.id, $smarty.get.color)}
+            <!-- /menus and filters-->
+        </div>
+        <div class="col-md-9">
+            <div class="info-bar">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 products-showing">{sprintf('[`Showing %s of %s products`]', '<strong>'|cat:count($products)|cat:'</strong>', '<strong>'|cat:$products_count|cat:'</strong>')}</div>
+                </div>
+            </div>
+            <div class="row products">
+                {if !$products}
+                    {if !empty($filters)}
+                        [`No products were found.`]
+                    {else}
+                        [`This category does not contain any products.`]
+                    {/if}
+                {else}
+                    {foreach $products as $item}
+                        {include file="`$wa_active_theme_path`/_item.html" item=$item inline}
+                    {/foreach}
+                {/if}
+            </div>
+            {if $pages_count > 1}
+                {if isset($smarty.get.page)}{$page = $smarty.get.page+1}{else}{$page = 1}{/if}
+                <div class="pages">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        {if $page-4 > 0 && $page+1 > $pages_count}<li><a href="#">{$page-4}</a></li>{/if}
+                        {if $page-3 > 0 && $page+2 > $pages_count}<li><a href="#">{$page-3}</a></li>{/if}
+                        {if $page-2 > 0}<li><a href="#">{$page-2}</a></li>{/if}
+                        {if $page-1 > 0}<li><a href="#">{$page-1}</a></li>{/if}
+                        <li class="active">{$page}</li>
+                        {if $page+1 <= $pages_count}<li><a href="#">{$page+1}</a></li>{/if}
+                        {if $page+2 <= $pages_count}<li><a href="#">{$page+2}</a></li>{/if}
+                        {if $page-2 > 0 && $page+3 >= $pages_count}<li><a href="#">{$page+3}</a></li>{/if}
+                        {if $page-1 > 0 && $page+4 >= $pages_count}<li><a href="#">{$page+4}</a></li>{/if}
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            {/if}
+        </div>
+    </div>
+    {include file="`$wa_active_theme_path`/_productModal.html" inline}
+</div>
+<script type="text/javascript" src="{$wa_theme_url}js/category.js"></script>

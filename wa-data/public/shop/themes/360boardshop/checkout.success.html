@@ -1,0 +1,36 @@
+<div class="col-md-12">
+    {shop360breadcrumbsPlugin::getStaticBreadcrumbs([0 => ['name' => 'Заказ принят']])}
+</div>
+<div class="row page-top">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>[`Order accepted`]</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="checkout-result success text-center">
+            <h2>[`Thank you!`]</h2>
+            <p>[`We successfully accepted your order, and will contact you asap.`]<br />
+                [`Your order number is `] <strong>{$order.id}</strong>.</p>
+
+            {if !empty($payment)}
+            <div class="plugin">
+                {$payment}
+            </div>
+            {/if}
+
+            {if !empty($payment_success)}
+            <span class="highlighted">[`Your payment has been successfully accepted. We will process your order and contact you shortly.`]</span>
+            {/if}
+
+            <p class="back">
+                <a class="btn btn-primary" href="{$wa_app_url}"><i class="fa fa-chevron-left"></i>[`Back to the store`]</a>
+            </p>
+
+            <!-- plugin hook: 'frontend_checkout' -->
+            {* @event frontend_checkout.%plugin_id% *}
+            {foreach $frontend_checkout as $_}{$_}{/foreach}
+
+        </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@ class shopFrontendCheckoutAction extends waViewAction
         $steps = $this->getConfig()->getCheckoutSettings();
 
         $current_step = waRequest::param('step', waRequest::request('step'));
+//        die($current_step);
         if (!$current_step) {
             $current_step = key($steps);
         }
@@ -22,6 +23,24 @@ class shopFrontendCheckoutAction extends waViewAction
             $this->success();
         } else {
             $cart = new shopCart();
+            $items = $cart->items(false);
+
+            $subtotal = $cart->total(false);
+            $order = array(null, 'total' => $subtotal, 'items' => $items);
+            if (!isset($order['shipping'])) {
+                $shipping_step = new shopCheckoutShipping();
+                $rate = $shipping_step->getRate();
+                if ($rate) {
+                    $order['shipping'] = $rate['rate'];
+                } else {
+                    $order['shipping'] = 0;
+                }
+            }
+            $this->view->assign(array(
+                'shipping' => $order['shipping'],
+                'total' => $subtotal - $order['discount'] + $order['shipping'],
+                'subtotal' => $subtotal
+            ));
             if (!$cart->count() && $current_step != 'error' && ($current_step != 'confirmation' || !waRequest::get('terms'))) {
                 $current_step = 'error';
                 $this->view->assign('error', _w('Your shopping cart is empty. Please add some products to cart, and then proceed to checkout.'));
