@@ -26,3 +26,30 @@ array (
     't' => 1458554921,
   ),
 )
+2016-03-24 18:55:09:
+array (
+  44372 => 
+  array (
+    'text' => 'Unable to install application (developer version is on)',
+    'result' => 'fail',
+    't' => 1458834909,
+  ),
+)
+2016-03-24 18:55:35:
+array (
+  58575 => 
+  array (
+    'text' => '[`Settings saved`]',
+    'result' => 'success',
+    't' => 1458834935,
+  ),
+)
+2016-03-24 18:55:38:
+array (
+  29114 => 
+  array (
+    'text' => '[`Settings saved`]',
+    'result' => 'success',
+    't' => 1458834938,
+  ),
+)

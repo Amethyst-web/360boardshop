@@ -6,7 +6,7 @@ return array (
     'host' => 'localhost',
     'port' => false,
     'user' => 'root',
-    'password' => 'f138h5Yr',
+    'password' => '74ZvqjHaTshBRJjd5QEA',
     'database' => '360boardshop',
     'type' => 'mysqli',
   ),
