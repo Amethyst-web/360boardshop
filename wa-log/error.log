@@ -41,3 +41,93 @@ Error 0: Curl error: 28# Connection timed out after 10000 milliseconds at [http:
 Error 0: Curl error: 28# Connection timed out after 10000 milliseconds at [http://www.webasyst.com/download/2.0/updates/?v[contacts]=1.1.3.39768&v[installer]=1.5.3.4&v[shop]=6.3.0.44568&v[shop/plugins/migrate]=2.1.0.40142&v[shop/plugins/redirect]=1.1.42447&v[shop/themes/360boardshop]=1.0.0.0&v[shop/themes/vk]=1.1.7.44472&v[shop/widgets/customers]=1.0.42413&v[shop/widgets/kpi]=1.0.42413&v[shop/widgets/orders]=1.2.42413&v[shop/widgets/products]=1.0.43955&v[shop/widgets/reviews]=1.1.42413&v[shop/widgets/sales]=1.2.42413&v[shop/widgets/sources]=1.0.42413&v[site]=2.2.6.42413&v[wa-widgets/clock]=1.1.42413&v[wa-widgets/news]=1.1.42413&v[wa-widgets/weather]=1.2.42839&v[wa-plugins/payment/cash]=1.0.0.23717&v[wa-plugins/shipping/courier]=1.1.0.38660&v[wa-plugins/shipping/pickup]=1.0.0.38660&server_data=1&hash=6d57502d4dc1155373b82a37f8fb4518&domain=MzYwYm9hcmRzaG9wLnJ1&signature=eyJwaHAiOiI3LjAuMCIsImMiOjQsImFwaSI6ImFwYWNoZTJoYW5kbGVyIiwib3MiOiJXaW5kb3dzIE5UIiwiciI6IjYuMiJ9&locale=ru_RU]
 2016-03-07 21:11:46:
 Error 2006: MySQL server has gone away
+2016-03-24 19:15:48:
+<div style="width:99%; position:relative; text-align: left;">
+    <h2 id='Title'>Access denied for user 'root'@'localhost' (using password: YES)</h2>
+    <div id="Context" style="display: block;">
+        <h3>Error with code 1045 in 'C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waDbMysqliAdapter.class.php' around line 33:</h3>
+        <pre>
+   28	    {
+   29	        $host = $settings['host'];
+   30	        $port = isset($settings['port']) ? $settings['port'] : ini_get("mysqli.default_port");
+   31	        $handler = @new mysqli($host, $settings['user'], $settings['password'], $settings['database'], $port);
+   32	        if ($handler-&gt;connect_error) {
+ &gt;&gt;33	            throw new waDbException($handler-&gt;connect_error, $handler-&gt;connect_errno);
+   34	        }
+   35	        
+   36	        $charset = isset($settings['charset']) ? $settings['charset'] : 'utf8';
+   37	        @$handler-&gt;set_charset($charset);
+   38	        if (isset($settings['sql_mode'])) {
+</pre>
+    </div>
+    <div id="Trace">
+        <h2>Call stack</h2>
+        <pre>#0 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waDbAdapter.class.php(30): waDbMysqliAdapter-&gt;connect(Array)
+#1 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waDbConnector.class.php(49): waDbAdapter-&gt;__construct(Array)
+#2 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waModel.class.php(75): waDbConnector::getConnection('default', false)
+#3 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\config\waAppConfig.class.php(378): waModel-&gt;__construct()
+#4 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\config\waAppConfig.class.php(285): waAppConfig-&gt;install()
+#5 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\waSystem.class.php(94): waAppConfig-&gt;checkUpdates()
+#6 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\waSystem.class.php(557): waSystem::getInstance('webasyst')
+#7 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\index.php(7): waSystem-&gt;dispatch()
+#8 {main}</pre>
+    </div>
+    <div id="Request">
+        <h2>Request</h2>
+        <pre>array (
+  'action' =&gt; 'count',
+  'background_process' =&gt; '1',
+  '_' =&gt; '1458836148125',
+)</pre>
+    </div>
+</div>
+    <div style="text-align: left;">
+        <h2>Params</h2>
+        <pre>array (
+)</pre>
+    </div>
+2016-03-24 19:16:49:
+<div style="width:99%; position:relative; text-align: left;">
+    <h2 id='Title'>Access denied for user 'root'@'localhost' (using password: YES)</h2>
+    <div id="Context" style="display: block;">
+        <h3>Error with code 1045 in 'C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waDbMysqliAdapter.class.php' around line 33:</h3>
+        <pre>
+   28	    {
+   29	        $host = $settings['host'];
+   30	        $port = isset($settings['port']) ? $settings['port'] : ini_get("mysqli.default_port");
+   31	        $handler = @new mysqli($host, $settings['user'], $settings['password'], $settings['database'], $port);
+   32	        if ($handler-&gt;connect_error) {
+ &gt;&gt;33	            throw new waDbException($handler-&gt;connect_error, $handler-&gt;connect_errno);
+   34	        }
+   35	        
+   36	        $charset = isset($settings['charset']) ? $settings['charset'] : 'utf8';
+   37	        @$handler-&gt;set_charset($charset);
+   38	        if (isset($settings['sql_mode'])) {
+</pre>
+    </div>
+    <div id="Trace">
+        <h2>Call stack</h2>
+        <pre>#0 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waDbAdapter.class.php(30): waDbMysqliAdapter-&gt;connect(Array)
+#1 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waDbConnector.class.php(49): waDbAdapter-&gt;__construct(Array)
+#2 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\database\waModel.class.php(75): waDbConnector::getConnection('default', false)
+#3 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\config\waAppConfig.class.php(378): waModel-&gt;__construct()
+#4 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\config\waAppConfig.class.php(285): waAppConfig-&gt;install()
+#5 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\waSystem.class.php(94): waAppConfig-&gt;checkUpdates()
+#6 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-system\waSystem.class.php(557): waSystem::getInstance('webasyst')
+#7 C:\Users\Nikita\Dropbox\Amethyst\360boardshop\index.php(7): waSystem-&gt;dispatch()
+#8 {main}</pre>
+    </div>
+    <div id="Request">
+        <h2>Request</h2>
+        <pre>array (
+  'action' =&gt; 'count',
+  'background_process' =&gt; '1',
+  '_' =&gt; '1458836209125',
+)</pre>
+    </div>
+</div>
+    <div style="text-align: left;">
+        <h2>Params</h2>
+        <pre>array (
+)</pre>
+    </div>
