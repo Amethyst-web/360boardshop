@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d56d78-9b5b-442f-b2c8-3f60539cf062" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/360boardshop.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wa-apps/shop/plugins/360breadcrumbs/lib/shop360Breadcrumbs.plugin.php" afterPath="$PROJECT_DIR$/wa-apps/shop/plugins/360breadcrumbs/lib/shop360Breadcrumbs.plugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wa-apps/shop/plugins/360instagram/lib/shop360Instagram.plugin.php" afterPath="$PROJECT_DIR$/wa-apps/shop/plugins/360instagram/lib/shop360Instagram.plugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wa-apps/shop/plugins/brandList/lib/shopBrandList.plugin.php" afterPath="$PROJECT_DIR$/wa-apps/shop/plugins/brandList/lib/shopBrandList.plugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wa-apps/shop/plugins/categories/lib/shopCategories.plugin.php" afterPath="$PROJECT_DIR$/wa-apps/shop/plugins/categories/lib/shopCategories.plugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wa-apps/shop/plugins/categoryList/lib/shopCategoryList.plugin.php" afterPath="$PROJECT_DIR$/wa-apps/shop/plugins/categoryList/lib/shopCategoryList.plugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wa-apps/shop/plugins/colorList/lib/shopColorList.plugin.php" afterPath="$PROJECT_DIR$/wa-apps/shop/plugins/colorList/lib/shopColorList.plugin.php" />
     </list>
     <ignored path="360boardshop.ru.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,42 +38,22 @@
     <favorites_list name="360boardshop.ru" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="theme.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/theme.xml">
+    <leaf>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2703">
-              <caret line="159" column="56" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="360boardshop.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/360boardshop.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shop360breadcrumbs.plugin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wa-apps/shop/plugins/360breadcrumbs/lib/shop360breadcrumbs.plugin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/product.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="79" column="53" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="53" />
+            <state relative-caret-position="85">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -100,8 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/js/front.js" />
-        <option value="$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/css/style.default.css" />
         <option value="$PROJECT_DIR$/wa-apps/shop/themes/default/cart.html" />
         <option value="$PROJECT_DIR$/wa-apps/shop/lib/actions/frontend/shopFrontendCart.action.php" />
         <option value="$PROJECT_DIR$/hunter-hipster-ecommerce/contact.html" />
@@ -151,6 +125,8 @@
         <option value="$PROJECT_DIR$/wa-apps/shop/plugins/360instagram/lib/shop360instagram.plugin.php" />
         <option value="$PROJECT_DIR$/wa-apps/shop/plugins/360breadcrumbs/lib/shop360breadcrumbs.plugin.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/amethyst-ws.conf" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -164,7 +140,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-1866" />
     <option name="y" value="-8" />
     <option name="width" value="1874" />
     <option name="height" value="1096" />
@@ -338,8 +314,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,19 +331,19 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Nikita/Dropbox/Amethyst/360boardshop/wa-data/public/shop/themes/360boardshop/checkout.success.html" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\shop\plugins\360breadcrumbs\locale" />
-      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\shop\plugins\360breadcrumbs\locale\ru_RU" />
-      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-data\public\shop\themes\360boardshop" />
-      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-data\public\shop\themes\360boardshop\js" />
-      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-data\public\shop\themes\360boardshop\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\shop\plugins\brandList" />
       <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\site\plugins" />
       <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\shop\plugins" />
       <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\site\plugins\subscribe\lib" />
       <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\site\plugins\instagram\lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop" />
+      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\shop\plugins\360breadcrumbs\locale" />
+      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-apps\shop\plugins\360breadcrumbs\locale\ru_RU" />
+      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-data\public\shop\themes\360boardshop" />
+      <recent name="C:\Users\Nikita\Dropbox\Amethyst\360boardshop\wa-data\public\shop\themes\360boardshop\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -445,19 +421,20 @@
       <workItem from="1458292065609" duration="14993000" />
       <workItem from="1458552930276" duration="5347000" />
       <workItem from="1458722193367" duration="92000" />
-      <workItem from="1458823259990" duration="220000" />
+      <workItem from="1458823259990" duration="294000" />
+      <workItem from="1458823900854" duration="728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20652000" />
+    <option name="totallyTimeSpent" value="21454000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1866" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21499449" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21719956" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -492,20 +469,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wa-apps/shop/plugins/colorList/locale/ru_RU/LC_MESSAGES/shop_colorList.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wa-apps/shop/plugins/categoryList/locale/ru_RU/LC_MESSAGES/shop_categoryList.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wa-apps/shop/plugins/categories/locale/ru_RU/LC_MESSAGES/shop_categories.po">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -732,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="206" selection-start-line="29" selection-start-column="111" selection-end-line="29" selection-end-column="206" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="59" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,9 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="41" column="43" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="43" />
-          <folding>
-            <marker date="1458555977041" expanded="true" signature="5832:5967" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="92" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="92" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,23 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="360" selection-start-line="16" selection-start-column="360" selection-end-line="16" selection-end-column="360" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="53" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/theme.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="56" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,9 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <marker date="1458823351100" expanded="true" signature="974:1473" placeholder="SELECT fv.va... ${$featureModel-&gt;getTableName()}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,9 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <marker date="1458823368102" expanded="true" signature="661:780" placeholder="SELECT id, u... ${$categoryModel-&gt;getTableName()}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,9 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding>
-            <marker date="1458823383897" expanded="true" signature="584:939" placeholder="SELECT c.ful... ${$model-&gt;getTableName()}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,9 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding>
-            <marker date="1458823401722" expanded="true" signature="1086:1617" placeholder="SELECT fv.va... ${$featureModel-&gt;getTableName()}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,7 +779,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/theme.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="876">
+          <caret line="159" column="56" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -861,14 +801,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wa-data/public/shop/themes/360boardshop/product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="876">
+          <caret line="79" column="53" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/360boardshop.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>

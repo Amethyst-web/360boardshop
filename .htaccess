@@ -1,6 +1,9 @@
 <FilesMatch "\.md5$">
     Deny from all
 </FilesMatch>
+<FilesMatch "\.conf$">
+    Deny from all
+</FilesMatch>
 
 DirectoryIndex index.php
 Options -Indexes
