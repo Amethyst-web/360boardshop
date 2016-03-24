@@ -16,6 +16,8 @@ class shopSubscribePlugin extends shopPlugin{
         if(!$settings['active']){
             return '';
         }
-        return wa()->getView()->fetch(static::getPluginTemplatePath('main.html'));
+        $view = wa()->getView();
+        $view->assign('selfInfo',static::$selfInfo);
+        return $view->fetch(static::getPluginTemplatePath('main.html'));
     }
 }
