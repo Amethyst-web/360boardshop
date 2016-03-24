@@ -16,7 +16,9 @@ class shopCategoryListPlugin extends shopPlugin{
      * Возвращает html-код категорий
      * @return mixed|string
      */
-    public static function getCategories(): string {
+//    PHP7
+//    public static function getCategories(): string {
+    public static function getCategories() {
         $settings = (new self(static::$selfInfo))->getSettings();
         if(!$settings['active']){
             return '';

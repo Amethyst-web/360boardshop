@@ -17,7 +17,9 @@ class shop360instagramPlugin extends shopPlugin{
      * Возвращает html-код с последними фото
      * @return mixed
      */
-    public static function getLastPhotos(): string {
+//    PHP7
+//    public static function getLastPhotos(): string {
+    public static function getLastPhotos() {
         $settings = (new self(static::$selfInfo))->getSettings();
         if(!$settings['active']){
             return '';

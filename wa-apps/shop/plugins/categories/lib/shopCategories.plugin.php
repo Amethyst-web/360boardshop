@@ -14,7 +14,9 @@ class shopCategoriesPlugin extends shopPlugin{
     /**
      * @return mixed
      */
-    public static function getCats(): string {
+//    PHP7
+//    public static function getCats(): string {
+    public static function getCats() {
         $settings = (new self(static::$selfInfo))->getSettings();
         if(!$settings['active']){
             return '';

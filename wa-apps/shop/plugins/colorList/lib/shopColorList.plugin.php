@@ -18,7 +18,9 @@ class shopColorListPlugin extends shopPlugin{
      * @param array $selectedColors
      * @return mixed|string
      */
-    public static function getColors(int $categoryId = null, array $selectedColors = null): string {
+//    PHP7
+//    public static function getColors(int $categoryId = null, array $selectedColors = null): string {
+    public static function getColors($categoryId = null, array $selectedColors = null){
         $settings = (new self(static::$selfInfo))->getSettings();
         if(!$settings['active']){
             return '';

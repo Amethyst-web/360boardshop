@@ -18,7 +18,9 @@ class shop360breadcrumbsPlugin extends shopPlugin{
      * @param int $product_id - id товара
      * @return mixed|string
      */
-    public static function getCrumbs(int $category_id = null, int $product_id = null): string {
+//    PHP7
+//    public static function getCrumbs(int $category_id = null, int $product_id = null): string {
+    public static function getCrumbs($category_id = null, $product_id = null){
         $settings = (new self(static::$selfInfo))->getSettings();
         if(!$settings['active']){
             return '';

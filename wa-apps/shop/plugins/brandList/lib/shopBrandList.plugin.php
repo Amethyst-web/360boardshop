@@ -18,7 +18,9 @@ class shopBrandListPlugin extends shopPlugin{
      * @param string $selectedBrand
      * @return mixed|string
      */
-    public static function getBrands(int $categoryId = null, string $selectedBrand = null): string {
+//    PHP7
+//    public static function getBrands(int $categoryId = null, string $selectedBrand = null): string {
+    public static function getBrands($categoryId = null, $selectedBrand = null) {
         $settings = (new self(static::$selfInfo))->getSettings();
         wa()->getResponse()->addJs('plugins/'.static::$selfInfo['id'].'/js/main.js', static::$selfInfo['app_id']);
         if(!$settings['active']){
