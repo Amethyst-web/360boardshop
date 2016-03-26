@@ -36,7 +36,7 @@ class shopColorListPlugin extends shopPlugin{
             INNER JOIN '.(new shopFeatureValuesColorModel())->getTableName().' fv ON f.id = fv.feature_id
             INNER JOIN '.(new shopProductFeaturesModel())->getTableName().' pf ON pf.feature_value_id = fv.id AND f.id = pf.feature_id
             INNER JOIN '.(new shopProductModel())->getTableName().' p ON p.id = pf.product_id
-            WHERE pf.sku_id IS NULL'.$innerFilter.' AND f.code = \'color\'')->fetchAll();
+            WHERE pf.sku_id IS NULL'.$innerFilter.' AND f.code = \'color\' GROUP BY fv.value, fv.code, fv.id')->fetchAll();
         $colorParser = new shopColorValue([]);
         foreach($colors as $key => $color){
             $colors[$key]['value'] = $colorParser->convert('hex', $color['code']);
