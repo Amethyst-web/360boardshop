@@ -71,7 +71,23 @@
                             <h4>[`Settings`]</h4>
                             <ul>
                                 {foreach $product.features as $feat_key => $feat}
-                                    <li class="feature"><b>{$features[$feat_key].name}:</b><span id="feature_{$features[$feat_key].id}">{if $features[$feat_key].multiple == 1}{$feat[$product.sku_features[$features[$feat_key].id]]}{else}{$feat}{/if}</span></li>
+                                    <li class="feature"><b>{$features[$feat_key].name}:</b>
+                                        <span id="feature_{$features[$feat_key].id}">
+                                            {if $features[$feat_key].multiple == 1}
+                                                {if count($product.sku_features) === 0}
+                                                    {$featAr = []}
+                                                    {foreach $feat as $f}
+                                                        {$featAr[] = $f.value}
+                                                    {/foreach}
+                                                    {join(', ', $featAr)}
+                                                {else}
+                                                    {$feat[$product.sku_features[$features[$feat_key].id]]}
+                                                {/if}
+                                            {else}
+                                                {$feat}
+                                            {/if}
+                                        </span>
+                                    </li>
                                 {/foreach}
                             </ul>
                         {/if}
