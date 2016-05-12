@@ -6,8 +6,8 @@ return array (
     array (
       'url' => '*',
       'app' => 'shop',
-      'phone' => '+7 (925) 041-51-84',
-      'email' => 'nikita@amethyst-ws.ru',
+      'phone' => '+7 (916) 940-51-22',
+      'email' => 'arh352@mail.ru',
       'address' => 'Россия, Москва, Красная площадь, 1',
       'lat' => '55.7530671',
       'lng' => '37.6264178',

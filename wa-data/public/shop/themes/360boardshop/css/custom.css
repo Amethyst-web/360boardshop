@@ -58,3 +58,6 @@
     height: 60px;
     overflow: hidden;
 }
+.product .text h3{
+    font-size: 14px;
+}
